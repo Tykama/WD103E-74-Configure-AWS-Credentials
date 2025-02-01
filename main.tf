@@ -7,7 +7,7 @@ resource "aws_vpc" "Action-VPC" {
 
   tags = {
     Name = "Actions-VPC"
-    env  = "prod"
+    env  = "dev"
   }
 }
 
