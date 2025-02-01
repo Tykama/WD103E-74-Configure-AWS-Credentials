@@ -7,7 +7,7 @@ resource "aws_vpc" "Action-VPC" {
 
   tags = {
     Name = "Actions-VPC"
-    env  = "dev"
+    env  = "tykama"
   }
 }
 
