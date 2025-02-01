@@ -10,7 +10,7 @@ resource "aws_vpc" "Action-VPC" {
     env  = "prod"
   }
 }
-/*
+
 terraform {
   backend "s3" {
     bucket = "buck-git-terra-action"
@@ -18,4 +18,3 @@ terraform {
     region = "us-east-1"
   }
 }
-*/
