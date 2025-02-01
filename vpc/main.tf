@@ -1,13 +1,13 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 }
 
 resource "aws_vpc" "Action-VPC" {
-  cidr_block = "10.0.0.0/24"
+  cidr_block = var.ciblk
 
   tags = {
-    Name = "Actions-VPcc"
-    env  = "tykama"
+    Name = var.name
+    env  = var.env
   }
 }
 
@@ -15,6 +15,6 @@ terraform {
   backend "s3" {
     bucket = "titilop-eewrt-cdee-1332"
     key    = "gitactions/terraform.tfstate"
-    region = "us-east-1"
+    region = var.region
   }
 }

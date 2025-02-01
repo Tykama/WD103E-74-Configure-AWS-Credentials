@@ -1,5 +1,5 @@
 module.exports = {
-   branches: ["main"],  // ✅ Corrected to an array
+   branches: ["main"],  
    plugins: [
      '@semantic-release/commit-analyzer',
      '@semantic-release/release-notes-generator',
@@ -8,7 +8,7 @@ module.exports = {
      [
        '@semantic-release/npm',
        {
-         npmPublish: false // ✅ Disables npm publishing (if not publishing a package)
+         npmPublish: false 
        }
      ]
    ]
