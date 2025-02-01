@@ -15,6 +15,6 @@ terraform {
   backend "s3" {
     bucket = "titilop-eewrt-cdee-1332"
     key    = "gitactions/terraform.tfstate"
-    region = var.region
+    region = "us-east-1"
   }
 }
