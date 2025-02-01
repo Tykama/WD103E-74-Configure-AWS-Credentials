@@ -6,7 +6,7 @@ resource "aws_vpc" "Action-VPC" {
   cidr_block = "10.0.0.0/24"
 
   tags = {
-    Name = "Actions-VPC"
+    Name = "Actions-VPcc"
     env  = "tykama"
   }
 }
