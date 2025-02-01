@@ -13,7 +13,7 @@ resource "aws_vpc" "Action-VPC" {
 
 terraform {
   backend "s3" {
-    bucket = "buck-git-terra-action"
+    bucket = "titilop-eewrt-cdee-1332"
     key    = "gitactions/terraform.tfstate"
     region = "us-east-1"
   }
