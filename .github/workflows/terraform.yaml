@@ -1,0 +1,36 @@
+name: terraform
+
+on:
+  workflow_dispatch:
+env:
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo "Running terraform"
+
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: Install terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: initialize
+        run: terraform init
+
+      - name: validate
+        run: terraform validate
+
+      - name: format
+        run: terraform fmt -recursive
+        
+      - name: plan
+        run: terraform plan
+        if: github.event_name == 'workflow_dispatch'
+        
+      #- name: apply
+       # run: terraform apply -auto-approve
+        #if: github.event_name == 'push' && github.ref == 'refs/heads/main'
